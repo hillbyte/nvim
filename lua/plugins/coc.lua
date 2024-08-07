@@ -68,6 +68,7 @@ return {
 				"coc-pyright",
 				"coc-eslint",
 				"coc-prettier",
+				"coc-snippets",
 			}
 		end,
 	},
