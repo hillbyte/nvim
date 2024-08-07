@@ -1,28 +1,21 @@
 return {
-  {
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
-    "MunifTanjim/nui.nvim",
-  },
-  config = function()
-    vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal right<CR>', {})
-    vim.keymap.set('n', '<leader>bf', ':Neotree buffers reveal float<CR>', {})
-  end
-  },
-  {
-    "nvim-web-devicons",
-    config = function()
-    require("nvim-web-devicons").set_icon {
-  zsh = {
-    icon = "",
-    color = "#428850",
-    cterm_color = "65",
-    name = "Zsh"
-  }
-}
-    end
-  }
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+		config = function()
+			vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle right<CR>", {})
+			vim.keymap.set("n", "<C-f>", ":Neotree focus<CR>", {})
+			vim.keymap.set("n", "<leader>l", ":Neotree filesystem toggle left<CR>", {})
+			vim.keymap.set("n", "<leader>bf", ":Neotree buffers toggle float<CR>", {})
+			vim.cmd([[
+        highlight NeoTreeDirectoryIcon guifg=#808080
+        highlight NeoTreeDirectoryName guifg=#808080
+      ]])
+		end,
+	},
 }
