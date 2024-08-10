@@ -38,7 +38,7 @@ vim.wo.number = true
 vim.keymap.set("n", "<leader>w", "<CMD>update<CR>")
 
 -- Quit
-vim.keymap.set("n", "<leader>q", "<CMD>q<CR>")
+vim.keymap.set("n", "<leader>q", "<CMD>q!<CR>")
 
 -- Exit insert mode.
 vim.keymap.set("i", "jk", "<ESC>")

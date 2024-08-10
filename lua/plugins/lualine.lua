@@ -71,7 +71,7 @@ return {
 		-- Ensure the status line is always shown
 		vim.o.laststatus = 2
 		-- Set the command line height to 1
-		vim.o.cmdheight = 0
+		vim.o.cmdheight = 1
 
 		require("lualine").setup({
 			options = {
