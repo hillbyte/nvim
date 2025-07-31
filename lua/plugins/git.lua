@@ -1,6 +1,7 @@
 return {
 	{
 		"tpope/vim-fugitive",
+		enabled = false,
 		lazy = true,
 		cmd = { "Git", "Gdiffsplit", "Gvdiffsplit", "Gstatus", "Gblame", "Gwrite" },
 		keys = {

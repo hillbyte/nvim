@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("toggleterm").setup({
 			size = 10,
-			open_mapping = [[<F7>]],
+			open_mapping = [[<F9>]],
 			shading_factor = 2,
 			direction = "horizontal",
 			float_opts = {

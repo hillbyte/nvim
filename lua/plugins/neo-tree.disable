@@ -11,7 +11,7 @@ return {
 			vim.keymap.set("n", "<leader>r", ":Neotree filesystem toggle right<CR>", {})
 			vim.keymap.set("n", "<leader>ef", ":Neotree focus<CR>", {})
 			vim.keymap.set("n", "<leader>l", ":Neotree filesystem toggle left<CR>", {})
-			vim.keymap.set("n", "<leader>b", ":Neotree buffers toggle float<CR>", {})
+			-- vim.keymap.set("n", "<leader>b", ":Neotree buffers toggle float<CR>", {})
 			-- Directly open buffer sidebar on the left
 			vim.keymap.set("n", "<leader>sb", ":Neotree buffers toggle left<CR>", {})
 			-- Buffer navigation using Tab
@@ -25,15 +25,21 @@ return {
 				vim.cmd("wincmd p")
 			end, {})
 			vim.cmd([[
-        highlight NeoTreeDirectoryIcon guifg=#86AB89
+        highlight NeoTreeDirectoryIcon guifg=#e9c46a
         highlight NeoTreeDirectoryName guifg=#808080
+    
       ]])
+			--highlight NeoTreeNormal guibg=#264653
+			--  highlight NeoTreeNormalNC guibg=#588157
 			require("neo-tree").setup({
 				-- filesystem = {
 				-- 	-- follow_current_file=true,
 				-- 	-- use_libuv_file_watcher = true,
 				-- 	hide_dotfiles = false, -- Show hidden files and folders
 				-- },
+				window = {
+					width = 30,
+				},
 				buffers = {
 					hide_dotfiles = false, -- Show hidden buffers (if needed)
 				},
@@ -42,7 +48,7 @@ return {
 				pattern = "*",
 				callback = function()
 					-- Open Neo-tree filesystem on the right
-					vim.cmd("Neotree filesystem reveal right")
+					-- vim.cmd("Neotree filesystem reveal right")
 					-- Open Neo-tree buffers on the left
 					-- vim.cmd("Neotree buffers reveal left")
 					-- Simulate Shift+h to show hidden files

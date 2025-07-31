@@ -2,6 +2,7 @@ return {
 	"nvimtools/none-ls.nvim",
 	dependencies = {
 		"nvimtools/none-ls-extras.nvim",
+		"neovim/nvim-lspconfig",
 	},
 	config = function()
 		local null_ls = require("null-ls")
@@ -16,5 +17,6 @@ return {
 		})
 
 		vim.keymap.set("n", "<leader>nf", vim.lsp.buf.format, {})
+		vim.keymap.set("n", "<leader>ne", vim.diagnostic.open_float, {})
 	end,
 }
