@@ -19,7 +19,7 @@ vim.opt.foldnestmax = 5
 -- fold conf end
 -- search settings
 vim.opt.ignorecase = true -- ignore case when searching
-vim.opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+vim.opt.smartcase = true  -- if you include mixed case in your search, assumes you want case-sensitive
 --set cursorline
 vim.opt.cursorline = true
 
@@ -74,9 +74,9 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "Y", "y$", { desc = "[P]Yank to end of line" })
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })

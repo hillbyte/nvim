@@ -3,14 +3,20 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
-			local config = require("nvim-treesitter.configs")
-			config.setup({
-				ensure_installed = { "lua", "javascript", "typescript", "html", "css", "markdown" },
-				--
-				auto_install = true,
-				highlight = { enable = true },
-				indent = { enable = true },
+			local parsers = { "lua", "javascript", "typescript", "html", "css", "markdown" }
+
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = parsers,
+				callback = function(args)
+					vim.treesitter.start(args.buf)
+				end,
 			})
+
+			vim.api.nvim_create_user_command("TSInstallAll", function()
+				for _, parser in ipairs(parsers) do
+					vim.cmd("TSInstall " .. parser)
+				end
+			end, {})
 		end,
 	},
 }
